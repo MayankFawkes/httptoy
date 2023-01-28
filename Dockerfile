@@ -48,8 +48,13 @@ COPY --from=build /go/src/github.com/mayankfawkes/httptoy/sample_files /sample_f
 
 
 EXPOSE 8000
+
+ARG git_sha="development"
 ENV GIT_SHA=$git_sha
+
+ARG app_version="unknown"
 ENV APP_VERSION=$app_version
+
 ENV GIN_MODE=release
 
 ENTRYPOINT ["/httptoy"]
