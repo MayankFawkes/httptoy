@@ -31,7 +31,7 @@ COPY --from=build /etc/group /etc/group
 USER appuser:appuser
 
 ARG APPLICATION="httpToy"
-ARG DESCRIPTION="A simple HTTP Request & Response Service."
+ARG DESCRIPTION="A powerful HTTP Request & Response Service."
 ARG PACKAGE="mayankfawkes/httptoy"
 
 LABEL maintainer="Mayank Gupta <mkgupta74d@gmail.com>" \
@@ -49,6 +49,7 @@ COPY --from=build /go/src/github.com/mayankfawkes/httptoy/sample_files /sample_f
 
 EXPOSE 8000
 ENV GIT_SHA=$git_sha
+ENV APP_VERSION=$app_version
 ENV GIN_MODE=release
 
 ENTRYPOINT ["/httptoy"]
