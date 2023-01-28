@@ -37,8 +37,8 @@ jobs:
           push: true
           file: ./Dockerfile
           tags: |
-            mayankfawkes/idmaker:latest
-            mayankfawkes/idmaker:${{ github.ref }}
+            mayankfawkes/httptoy:latest
+            mayankfawkes/httptoy:${{ github.ref }}
           build-args: |
             git_sha=${{ env.tag }}
             app_version=${{ github.ref }}

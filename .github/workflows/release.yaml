@@ -1,4 +1,4 @@
-name: Build & Push | WEB
+name: Make release
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    name: Build & Push
+    name: Make release
     runs-on: ubuntu-latest
   
     steps:
