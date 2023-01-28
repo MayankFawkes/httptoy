@@ -2,8 +2,6 @@ name: Build & Push | Dockerhub
 
 on:
   push:
-    branches:
-      - master
     tags:
       - v*
 
