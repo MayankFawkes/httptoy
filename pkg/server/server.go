@@ -13,14 +13,6 @@ func Server() *gin.Engine {
 
 	r.LoadHTMLGlob("templates/*.html")
 
-	// r.GET("/json", func(c *gin.Context) {
-	// 	c.JSON(200, gin.H{
-	// 		"status":  "posted",
-	// 		"message": "Hi...",
-	// 		"nick":    "Nick here",
-	// 	})
-	// })
-
 	r.GET("/", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "index.html", nil)
 	})

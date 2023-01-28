@@ -1,15 +1,13 @@
 package main
 
 import (
-	"fmt"
+	"log"
 
 	"github.com/mayankfawkes/httptoy/pkg/server"
 )
 
-var print = fmt.Println
-
 func main() {
-	print("Starting server hehe")
+	log.Println("Server listening on http://0.0.0.0:8000 and http://127.0.0.1:8000")
 	srv := server.Server()
-	srv.Run("127.0.0.1:8000")
+	srv.Run(":8000")
 }
