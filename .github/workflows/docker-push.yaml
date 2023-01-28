@@ -17,8 +17,7 @@ jobs:
         run: |
           tag=$(cut -c 1-7 <<< $GITHUB_SHA)
           echo "tag=$tag" >> $GITHUB_ENV
-          version=$(cut -d "v" -f 2 <<< $github.ref)
-          echo "version=$version" >> $GITHUB_ENV
+          echo "version=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
           
       - name: Checkout code
         uses: actions/checkout@v3
