@@ -21,9 +21,9 @@ func ri_header_by_name(c *gin.Context) {
 	header_name := c.Params.ByName("header_name")
 	hdr := c.GetHeader(header_name)
 
-	c.Data(http.StatusOK, "text/plain; charset=utf-8", []byte(hdr))
+	c.Data(http.StatusOK, CONTENT_TEXT, []byte(hdr))
 }
 
 func ri_client_real_ip(c *gin.Context) {
-	c.Data(http.StatusOK, "text/plain; charset=utf-8", []byte(c.ClientIP()))
+	c.Data(http.StatusOK, CONTENT_TEXT, []byte(c.ClientIP()))
 }

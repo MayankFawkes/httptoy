@@ -9,12 +9,6 @@ import (
 	"github.com/mayankfawkes/httptoy/pkg/parsers"
 )
 
-// GET /image
-// GET /image/png
-// GET /image/jpeg
-// GET /image/svg
-// GET /image/webp
-
 func addAllImages(r *gin.Engine) {
 	r.GET("/image", images_default)
 	r.GET("/image/png", images_png)
@@ -50,6 +44,10 @@ func images_default(c *gin.Context) {
 		return
 	}
 
+	if sup == "image/*" {
+		sup = "image/png"
+	}
+
 	dat, _ := os.ReadFile(fmt.Sprintf("sample_files/images/sample.%s", imagesExtension[sup]))
 	c.Data(http.StatusOK, sup, dat)
 
@@ -57,17 +55,17 @@ func images_default(c *gin.Context) {
 
 func images_png(c *gin.Context) {
 	dat, _ := os.ReadFile("sample_files/images/sample.png")
-	c.Data(http.StatusOK, "image/png", dat)
+	c.Data(http.StatusOK, CONTENT_IMAGE_PNG, dat)
 }
 func images_jpeg(c *gin.Context) {
 	dat, _ := os.ReadFile("sample_files/images/sample.jpeg")
-	c.Data(http.StatusOK, "image/jpeg", dat)
+	c.Data(http.StatusOK, CONTENT_IMAGE_JPEG, dat)
 }
 func images_svg(c *gin.Context) {
 	dat, _ := os.ReadFile("sample_files/images/sample.svg")
-	c.Data(http.StatusOK, "image/svg+xml", dat)
+	c.Data(http.StatusOK, CONTENT_IMAGE_SVG, dat)
 }
 func images_webp(c *gin.Context) {
 	dat, _ := os.ReadFile("sample_files/images/sample.webp")
-	c.Data(http.StatusOK, "image/webp", dat)
+	c.Data(http.StatusOK, CONTENT_IMAGE_WEBP, dat)
 }

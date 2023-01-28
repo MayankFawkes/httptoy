@@ -1,7 +1,9 @@
 package server
 
 import (
+	"fmt"
 	"net/http"
+	"os"
 
 	"github.com/gin-gonic/gin"
 	"github.com/mayankfawkes/httptoy/pkg/routes"
@@ -13,9 +15,18 @@ func Server() *gin.Engine {
 
 	r.LoadHTMLGlob("templates/*.html")
 
-	r.GET("/", func(c *gin.Context) {
-		c.HTML(http.StatusOK, "index.html", nil)
-	})
+	r.GET("/", index_html)
+	r.GET("/version", version)
 
 	return r
+}
+
+func index_html(c *gin.Context) {
+	c.HTML(http.StatusOK, "index.html", nil)
+}
+
+func version(c *gin.Context) {
+	version_text := fmt.Sprintf("VERSION=%s\nGIT_SHA=%s", os.Getenv("APP_VERSION"), os.Getenv("GIT_SHA"))
+
+	c.Data(http.StatusOK, routes.CONTENT_TEXT, []byte(version_text))
 }

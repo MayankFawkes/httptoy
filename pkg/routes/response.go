@@ -50,13 +50,13 @@ func response_bytes_count(c *gin.Context) {
 	randomBytes := make([]byte, count)
 	rand.Read(randomBytes)
 
-	c.Data(http.StatusOK, "application/octet-stream", randomBytes)
+	c.Data(http.StatusOK, CONTENT_BYTES, randomBytes)
 }
 
 func response_base64en(c *gin.Context) {
 	dat := c.Params.ByName("data")
 	rawDecodedText := base64.StdEncoding.EncodeToString([]byte(dat))
-	c.Data(http.StatusOK, "text/plain; charset=utf-8", []byte(rawDecodedText))
+	c.Data(http.StatusOK, CONTENT_TEXT, []byte(rawDecodedText))
 }
 
 func response_base64de(c *gin.Context) {
@@ -64,11 +64,11 @@ func response_base64de(c *gin.Context) {
 	rawDecodedText, err := base64.StdEncoding.DecodeString(dat)
 
 	if err != nil {
-		c.Data(http.StatusOK, "text/plain; charset=utf-8", []byte(INVALID_DATA))
+		c.Data(http.StatusOK, CONTENT_TEXT, []byte(INVALID_DATA))
 		return
 	}
 
-	c.Data(http.StatusOK, "text/plain; charset=utf-8", []byte(rawDecodedText))
+	c.Data(http.StatusOK, CONTENT_TEXT, []byte(rawDecodedText))
 }
 func response_delay(c *gin.Context) {
 	secString := c.Params.ByName("seconds")
@@ -92,39 +92,38 @@ func response_delay(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusOK, rt)
-
 }
 
 func response_uuid(c *gin.Context) {
 	uid := uuid.New()
-	c.Data(http.StatusOK, "text/plain; charset=utf-8", []byte(uid.String()))
+	c.Data(http.StatusOK, CONTENT_TEXT, []byte(uid.String()))
 }
 func response_body_data(c *gin.Context) {
 	dat := c.Params.ByName("data")
-	c.Data(http.StatusOK, "text/plain; charset=utf-8", []byte(dat))
+	c.Data(http.StatusOK, CONTENT_TEXT, []byte(dat))
 }
 
 func response_text(c *gin.Context) {
 	dat, _ := os.ReadFile("sample_files/data/sample.text")
-	c.Data(http.StatusOK, "text/plain; charset=utf-8", dat)
+	c.Data(http.StatusOK, CONTENT_TEXT, dat)
 }
 
 func response_json(c *gin.Context) {
 	dat, _ := os.ReadFile("sample_files/data/sample.json")
-	c.Data(http.StatusOK, "application/json; charset=utf-8", dat)
+	c.Data(http.StatusOK, CONTENT_JSON, dat)
 }
 
 func response_xml(c *gin.Context) {
 	dat, _ := os.ReadFile("sample_files/data/sample.xml")
-	c.Data(http.StatusOK, "application/xml; charset=utf-8", dat)
+	c.Data(http.StatusOK, CONTENT_XML, dat)
 }
 
 func response_yaml(c *gin.Context) {
 	dat, _ := os.ReadFile("sample_files/data/sample.yaml")
-	c.Data(http.StatusOK, "text/yaml; charset=utf-8", dat)
+	c.Data(http.StatusOK, CONTENT_YAML, dat)
 }
 
 func response_html(c *gin.Context) {
 	dat, _ := os.ReadFile("sample_files/data/sample.html")
-	c.Data(http.StatusOK, "text/html; charset=utf-8", dat)
+	c.Data(http.StatusOK, CONTENT_HTML, dat)
 }
