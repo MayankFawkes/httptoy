@@ -21,7 +21,8 @@ docker run -p 8000:8000 mayankfawkes/httptoy
 
 ## API Endpoints
 
-Under `{}` of url path are path parameters, if invalid parameters are found then they will be set to default values.
+Under `{}` of url path are path parameters, if invalid parameters are found then they will be set to default values, all ints have 0 as default value if invalid parameter is passed.
+
 
 ### Methods
 
