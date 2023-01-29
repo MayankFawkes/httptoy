@@ -225,12 +225,12 @@
     let all_endpoints = [];
 
     for (n of endpoints) {
-      all_endpoints.push($("<div>").addClass("col-2").append(
+      all_endpoints.push($("<div>").addClass("col-3").append(
           $("<p>").append(
               $("<kbd>").text(n.type.toUpperCase())
           )
       ))
-      all_endpoints.push($("<div>").addClass("col-10").append(
+      all_endpoints.push($("<div>").addClass("col-9").append(
           $("<p>").text(n.path)
       ))
     }
