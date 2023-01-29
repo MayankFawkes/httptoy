@@ -131,7 +131,7 @@ GET /html
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| `count` | `int` | **Required** Number of ramdom bytes return  |
+| `count` | `int` | **Required** Number of random bytes return  |
 | `data` | `string` | **Required** String data  |
 | `seconds` | `int` | **Required** Duration in seconds  |
 
