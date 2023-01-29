@@ -58,16 +58,6 @@ GET /gzip
 GET /utf8
 ```
 
-### Compression
-
-```http
-GET /deflate
-GET /brotli
-GET /zlib
-GET /gzip
-GET /utf8
-```
-
 ### Cookies
 
 ```http
