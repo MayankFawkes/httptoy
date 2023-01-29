@@ -1,12 +1,271 @@
-<html>
-    <head>
-        <title>
-            httpToy
-        </title>
-    </head>
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <body>
-        <h1>Hey this is httpToy</h1>
-    </body>
+  <title>httpToy 🎉</title>
+  <meta name="keywords" content="mayankfawkes, httpbin, httptoy, http, api, testing, request, response">
+  <meta name="author" content="Mayank Gupta">
+  <meta name="subject" content="http request response service">
+  <meta name="classification" content="open-source">
+  <meta name="revisit-after" content="1 days">
+  <meta name="title" content="httpToy 🎉">
+  <meta name="description" content="A powerful HTTP Request & Response Service. Inspired by httpbin.org which is now outdated.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="/">
+  <meta property="og:title" content="httpToy 🎉">
+  <meta property="og:description" content="A powerful HTTP Request & Response Service. Inspired by httpbin.org which is now outdated.">
+  <meta property="og:image" content="https://framerusercontent.com/images/1fxZjKRLlLe5L4vEMh8rsNMRAU4.jpg">
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:url" content="/">
+  <meta property="twitter:title" content="httpToy 🎉">
+  <meta property="twitter:description" content="A powerful HTTP Request & Response Service. Inspired by httpbin.org which is now outdated.">
+  <meta property="twitter:image" content="https://framerusercontent.com/images/1fxZjKRLlLe5L4vEMh8rsNMRAU4.jpg">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Cache-Control" content="no-cache">
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+  <!-- <link rel="stylesheet" href="./style.css"> -->
+  <style type="text/css">@import url(https://fonts.googleapis.com/css?family=Montserrat:400,400i,700);@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700);@import url(https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css);:root{--entry-header-height:100vh;--entry-header-background:#e0e0e0;--entry-footer-background:#e0e0e0;--entry-footer-height:25vh;--site-footer-color:#999}*{outline:0}html{font-size:16px}body{font-family:"Open Sans",sans-serif}h1,h2,h3,h4,h5,h6{font-family:Montserrat,sans-serif;font-weight:600}a{text-decoration:none}kbd{padding:.1875rem .375rem;font-size:1.1em;color:var(--bs-body-color);background-color:var(--bs-body-bg);border-radius:.25rem}.hentry .entry-footer .publish-on,.hentry .entry-footer .writer,.site-footer{font-size:.85rem}.site-footer .card{background-color:transparent;color:inherit}.site-footer .card .card-title{color:currentColor;font-size:1rem;text-transform:uppercase}.site-footer .card .card-body{color:currentColor}.site-footer .card .card-body ul{margin-left:0}.hentry .entry-header{display:flex;flex-flow:column no-wrap;justify-content:center;align-items:center;min-height:var(--entry-header-height)}.hentry .entry-content>*,.hentry .entry-footer>*,.hentry .entry-header>*{max-width:600px;margin:1.5rem auto;padding-left:1rem;padding-right:1rem}.hentry .entry-content ul,.hentry .entry-footer ul,.hentry .entry-header ul{padding-left:2.5rem;padding-right:2.5rem}.hentry .entry-content>.alignwide,.hentry .entry-content>.container,.hentry .entry-footer>.alignwide,.hentry .entry-footer>.container,.hentry .entry-header>.alignwide,.hentry .entry-header>.container{max-width:1140px}.hentry .entry-content>.alignfull,.hentry .entry-footer>.alignfull,.hentry .entry-header>.alignfull{margin:1.5rem 0;max-width:100%;padding-left:0;padding-right:0}.social-media span{display:none}.sekrol{position:absolute;bottom:2rem;left:50%;transform:translatex(-50%);width:27px;height:44px}.sekrol .tikus{width:3px;padding:5px 10px;height:30px;border:2px solid #444;border-radius:15px;opacity:.75;box-sizing:content-box}.sekrol .tikus .pemutar{width:3px;height:10px;border-radius:25%;background-color:#444;-webkit-animation-name:tikusscroll;animation-name:tikusscroll;-webkit-animation-duration:1.5s;animation-duration:1.5s;-webkit-animation-timing-function:cubic-bezier(0.15,0.41,0.69,0.94);animation-timing-function:cubic-bezier(0.15,0.41,0.69,0.94);-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite}@-webkit-keyframes tikusscroll{0%{opacity:0}10%{transform:translateY(0);opacity:1}100%{transform:translateY(15px);opacity:0}}@keyframes tikusscroll{0%{opacity:0}10%{transform:translateY(0);opacity:1}100%{transform:translateY(15px);opacity:0}}.vh-25{min-height:25vh}.vh-50{min-height:50vh}.vh-75{min-height:75vh}.vh-100{min-height:100vh}</style>
+
+</head>
+<body class="bg-dark text-light">
+
+<main class="site-content">
+  <article class="hentry">
+    <section class="entry-content">
+
+      <div class="container alignwide">
+        <div class="row py-5">
+          <div class="col-12 text-center">
+            <h1>httptoy 🎉</h1>
+          </div>
+        </div>
+      </div>
+
+      <h2>Description</h2>
+      <p>A powerful HTTP Request & Response Service. Inspired by <a href="https://httpbin.org">httpbin.org</a> / <a href="https://github.com/postmanlabs/httpbin">Github</a> which is now outdated.</p>
+
+      <h3>Features</h3>
+      <ul>
+        <li>Light Weight & Easy to setup</li>
+        <li>Docker image available</li>
+        <li>One command installation</li>
+      </ul>
+
+      <h3>Links</h3>
+      <ul>
+        <li> <a href="http://httptoy.com">http://httptoy.com</a> </li>
+        <li> <a href="https://httptoy.com">https://httptoy.com</a> </li>
+        <li> <a href="https://hub.docker.com/r/mayankfawkes/httptoy">https://hub.docker.com/r/mayankfawkes/httptoy</a> </li>
+      </ul>
+
+
+      <h3>Run locally</h3>
+      <p>
+        <code>
+          $ docker pull mayankfawkes/httptoy<br>
+          $ docker run -p 8000:8000 mayankfawkes/httptoy
+        </code>
+      </p>
+
+      <h3>API Endpoints</h3>
+      <p>Under <kbd>{}</kbd> of url path are path parameters, if invalid parameters are found then they will be set to default values, all ints have 0 as default value if invalid parameter is passed.</p>
+
+      <hr>
+      <div class="endpoint-method"></div>
+      <hr>
+      <div class="endpoint-auth"></div>
+      <div class="table-auth"></div>
+      <hr>
+
+      <div class="endpoint-compression"></div>
+      <hr>
+
+      <div class="endpoint-cookies"></div>
+      <div class="table-auth"></div>
+      <hr>
+
+      <div class="endpoint-images"></div>
+      <hr>
+
+      <div class="endpoint-redirect"></div>
+      <div class="table-redirect"></div>
+      <hr>
+
+      <div class="endpoint-request-inspection"></div>
+      <div class="table-request-inspection"></div>
+      <hr>
+
+      <div class="endpoint-response"></div>
+      <div class="table-response"></div>
+      <hr>
+
+      <div class="endpoint-response-status"></div>
+      <div class="table-response-status"></div>
+      <hr>
+
+      <h3>Conclusion</h3>
+      <p>You can find us on <a href="https://github.com/mayankfawkes/httptoy">Github</a> and officially hosting <a href="http://httptoy.com">httptoy.com</a></p>
+
+      <div class="pb-5"></div>
+
+
+
+    </section>
+  </article>
+</main>
+
+</body>
+
+
+<script type="text/javascript">
+  
+  var endpoints = {
+    "Method": [
+      {"type": "get", "path": "/get"},
+      {"type": "post", "path": "/post"},
+      {"type": "delete", "path": "/delete"},
+      {"type": "put", "path": "/put"},
+      {"type": "patch", "path": "/patch"}
+    ],
+    "Auth": [
+      {"type": "GET", "path": "/basic/{username}/{password}"},
+      {"type": "GET", "path": "/basic"},
+      {"type": "GET", "path": "/bearer"},
+    ],
+    "Compression": [
+      {"type": "GET", "path": "/deflate"},
+      {"type": "GET", "path": "/brotli"},
+      {"type": "GET", "path": "/zlib"},
+      {"type": "GET", "path": "/gzip"},
+      {"type": "GET", "path": "/utf8"},
+    ],
+    "Cookies": [
+      {"type": "GET", "path": "/cookies"},
+      {"type": "GET", "path": "/cookies/set/{key}/{value}"},
+      {"type": "GET", "path": "/cookies/delete/{key}"},
+    ],
+    "Images": [
+      {"type": "GET", "path": "/image"},
+      {"type": "GET", "path": "/image/png"},
+      {"type": "GET", "path": "/image/jpeg"},
+      {"type": "GET", "path": "/image/svg"},
+      {"type": "GET", "path": "/image/webp"},
+    ],
+    "Redirect": [
+      {"type": "GET", "path": "/redirect/{times}"},
+      {"type": "GET", "path": "/redirect-delay/{delay}/{times}"},
+    ],
+    "Request Inspection": [
+      {"type": "GET", "path": "/headers"},
+      {"type": "GET", "path": "/header/{header_name}"},
+      {"type": "GET", "path": "/ip"},
+    ],
+    "Response": [
+      {"type": "GET", "path": "/bytes/{count}"},
+      {"type": "GET", "path": "/base64en/{data}"},
+      {"type": "GET", "path": "/base64de/{data}"},
+      {"type": "GET", "path": "/delay/{seconds}"},
+      {"type": "POST", "path": "/delay/{seconds}"},
+      {"type": "DELETE", "path": "/delay/{seconds}"},
+      {"type": "PUT", "path": "/delay/{seconds}"},
+      {"type": "PATCH", "path": "/delay/{seconds}"},
+      {"type": "GET", "path": "/uuid"},
+      {"type": "GET", "path": "/body/{data}"},
+      {"type": "GET", "path": "/text"},
+      {"type": "GET", "path": "/json"},
+      {"type": "GET", "path": "/xml"},
+      {"type": "GET", "path": "/yaml"},
+      {"type": "GET", "path": "/html"},
+    ],
+    "Response Status": [
+      {"type": "GET", "path": "/status/{code}"},
+      {"type": "POST", "path": "/status/{code}"},
+      {"type": "DELETE", "path": "/status/{code}"},
+      {"type": "PUT", "path": "/status/{code}"},
+      {"type": "PATCH", "path": "/status/{code}"},
+    ],
+  }
+
+  var tables = {
+    "auth": [
+      ["username", "string", "Username for auth"],
+      ["password", "string", "password for auth"],
+    ],
+    "cookies": [
+      ["key", "string", "Cookie name"],
+      ["value", "string", "Cookie value"],
+    ],
+    "redirect": [
+      ["times", "int", "Number of time redirect"],
+      ["delay", "int", "Delay in redirect in seconds"],
+    ],
+    "request inspection": [
+      ["header_name", "string", "Name of the request header"],
+    ],
+    "response": [
+      ["count", "int", "Number of random bytes return"],
+      ["data", "string", "String data"],
+      ["seconds", "int", "Duration in seconds"],
+    ],
+    "Response Status": [
+      ["code", "int", 'Valid HTTP <a href="https://www.rfc-editor.org/rfc/rfc7231#section-6.1">Status Codes</a>'], 
+    ],
+
+  }
+
+  function CreateEndpoints(name, endpoints) {
+    $("<h4>").addClass("py-3").text(name).appendTo(".endpoint-"+name.toLowerCase().replace(" ", "-"));
+    let all_endpoints = [];
+
+    for (n of endpoints) {
+      all_endpoints.push($("<div>").addClass("col-2").append(
+          $("<p>").append(
+              $("<kbd>").text(n.type.toUpperCase())
+          )
+      ))
+      all_endpoints.push($("<div>").addClass("col-10").append(
+          $("<p>").text(n.path)
+      ))
+    }
+
+    $("<div>").addClass("row").append(all_endpoints).appendTo(".endpoint-"+name.toLowerCase().replace(" ", "-"));
+  }
+
+  function CreateTable(name, data) {
+    let thread = $('<thead><tr><th scope="col">Parameter</th><th scope="col">Type</th><th scope="col">Description</th></tr></thead>');
+    let tbody = [];
+
+    for (n of data) {
+      tbody.push(
+        $("<tr>").append(
+          $("<td>").append($("<kbd>").text(n[0])),
+          $("<td>").append($("<kbd>").text(n[1])),
+          $("<td>").html(n[2]),
+        )
+      )
+    }
+
+    $("<table>").addClass("table table-dark table-striped").append(thread, $("<tbody>").append(tbody)).appendTo(".table-"+name.toLowerCase().replace(" ", "-"));
+  }
+
+
+  for (const [key, value] of Object.entries(endpoints)) {
+    CreateEndpoints(key, value);
+  }
+  for (const [key, value] of Object.entries(tables)) {
+    CreateTable(key, value);
+  }
+
+
+
+</script>
+
 
 </html>

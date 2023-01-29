@@ -17,6 +17,7 @@ func Server() *gin.Engine {
 
 	r.GET("/", index_html)
 	r.GET("/version", version)
+	r.StaticFile("/favicon.ico", "sample_files/images/favicon.ico")
 
 	return r
 }
