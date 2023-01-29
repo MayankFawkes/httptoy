@@ -4,7 +4,7 @@ A powerful HTTP Request & Response Service. Inspired by [httpbin.org](https://ht
 ## Features
 
 - Light Weight & Easy to setup
-- Docker image avaiable 
+- Docker image available
 - One command installation
 
 ## Links
